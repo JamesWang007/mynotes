@@ -1,0 +1,48 @@
+install OpenCV3 in Linux
+1. first way
+using anaconda
+just run:
+ 	conda update -n base conda
+	conda install -c conda-forge opencv
+	conda install -c conda-forge/label/broken opencv
+
+
+	note: how to change a root folder to me:
+		
+		sudo chown -R $USER:$USER folder_name 
+
+	and type your normal user password
+
+
+
+
+Install cmake-gui
+	sudo apt install cmake-qt-gui
+
+
+
+
+
+
+2. second way
+- https://docs.opencv.org/3.1.0/d7/d9f/tutorial_linux_install.html
+
+Required Packages
+	GCC 4.4.x or later
+	CMake 2.8.7 or higher
+	- download: https://cmake.org/download/
+	/** type the code below **************/
+		tar -xzf cmake-3.11.0.tar.gz
+		cd cmake-3.11.0
+		./configure
+		make
+
+	/*************************************/
+	Git
+	GTK+2.x or higher, including headers (libgtk2.0-dev)
+	pkg-config
+	Python 2.6 or later and Numpy 1.5 or later with developer packages (python-dev, python-numpy)
+	ffmpeg or libav development packages: libavcodec-dev, libavformat-dev, libswscale-dev
+	[optional] libtbb2 libtbb-dev
+	[optional] libdc1394 2.x
+	[optional] libjpeg-dev, libpng-dev, libtiff-dev, libjasper-dev, libdc1394-22-dev

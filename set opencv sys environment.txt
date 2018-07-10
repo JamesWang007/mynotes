@@ -1,0 +1,40 @@
+
+setup opencv system environment
+
+sudo gedit /etc/profile
+export PKG_CONFIG_PATH=/home/james/lib/software/pkgconfig:$PKG_CONFIG_PATH
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/james/software/lib
+
+source /etc/profile
+
+
+sufo gedit /etc/bash.bashrc
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/james/software/lib/pkgconfig
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/james/software/lib
+
+source /etc/profile
+
+
+ldconfig
+	pkg-config --cflags opencv
+	pkg-config --libs opencv
+
+
+
+
+g++ drawing.cpp `pkg-config --cflags --libs opencv` -o opencv_test
+
+# update your gcc and g++
+link: https://askubuntu.com/questions/781972/how-can-i-update-gcc-5-3-to-6-1
+
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install gcc-6
+
+sudo apt install g++-6
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6    
+
+
